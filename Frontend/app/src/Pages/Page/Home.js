@@ -1,5 +1,6 @@
 import '../CSS/reset.css'
 import '../CSS/BodyStyle.css'
+import '../CSS/Home.css'
 import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'
 
@@ -44,60 +45,59 @@ function Home() {
 
 
 return (
-    <div className='BoxHome'>
-        <div className='boxTable'>
-        <div class="input-group mb-3">
-          <button class="btn btn-outline-secondary" type="button" id="button-addon1">Nome Popular</button>
-          <input type="text" class="form-control" name='pesquisaInput' onChange={handleChange} placeholder="Digite o nome para pesquisa" aria-label="Example text with button addon" aria-describedby="button-addon1"/>
-        </div>
+    <>
+        <div className="conteudoBox">
 
-        <table class="table">
-              <thead>
-                <tr>
-                  <th scope="col">Nome Popular</th>
-                  <th scope="col">Localização</th>
-                  <th scope="col">Ciclo Atual</th>
-                  <th scope="col">Data de Plantio</th>
-                  <th scope="col">Ciclo Anterior</th>
-                  <th scope="col">Ciclo Atual</th>                  
-                </tr>
-              </thead> 
+            <h1>GERENCIAMENTO DE PLANTAS</h1> <br/>
+            <div class="input-group mb-3">
+              <button class="btn btn-outline-secondary" type="button" id="button-addon1"></button>
+              <input type="text" class="form-control" name='pesquisaInput' onChange={handleChange} placeholder="Digite o nome para pesquisa" aria-label="Example text with button addon" aria-describedby="button-addon1"/>
+            </div>
 
-              {pesquisaInput.length > 0 ?(<>
-                {response.map((data, i)=>{return(<>
-                <tbody key={i}>
-                  <tr>
-                    <td scope="row">{data.nomePopular}</td>
-                    <td>{data.localizacao ? (<>{data.localizacao.referencia}</>) : (<></>)}</td>
-                    <td>{data.ciclo.ciclo}</td>
-                    <td>{data.ciclo.dataUltimoCiclo}</td>
-                    <td>{data.ciclo.dataCicloAtual}</td>
-                    <td>{data.instrucoes}</td>
-                  </tr>
-                </tbody>
-              </>)})}
-              
-              </>) : (<>
-              
-                {listAll.map((data, i)=>{return(<>
-                <tbody key={i}>
-                <tr>
-                    <td scope="row">{data.nomePopular}</td>
-                    <td>{data.localizacao ? (<>{data.localizacao.referencia}</>) : (<></>)}</td>
-                    <td>{data.ciclo.ciclo}</td>
-                    <td>{data.ciclo.dataUltimoCiclo}</td>
-                    <td>{data.ciclo.dataCicloAtual}</td>
-                    <td>{data.instrucoes}</td>
-                  </tr>
-                </tbody>
-              </>)})}
+            <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col">Nome Popular</th>
+                      <th scope="col">Localização</th>
+                      <th scope="col">Ciclo Atual</th>
+                      <th scope="col">Data de Plantio</th>
+                      <th scope="col">Ciclo Anterior</th>                 
+                    </tr>
+                  </thead> 
 
-              </>)}
+                  {pesquisaInput.length > 0 ?(<>
+                    {response.map((data, i)=>{return(<>
+                    <tbody key={i}>
+                      <tr>
+                        <td scope="row">{data.nomePopular}</td>
+                        <td>{data.localizacao ? (<>{data.localizacao.referencia}</>) : (<></>)}</td>
+                        <td>{data.ciclo.ciclo}</td>
+                        <td>{data.ciclo.dataUltimoCiclo}</td>
+                        <td>{data.ciclo.dataCicloAtual}</td>
+                      </tr>
+                    </tbody>
+                  </>)})}
+                  
+                  </>) : (<>
+                  
+                    {listAll.map((data, i)=>{return(<>
+                    <tbody key={i}>
+                    <tr>
+                        <td scope="row">{data.nomePopular}</td>
+                        <td>{data.localizacao ? (<>{data.localizacao.referencia}</>) : (<></>)}</td>
+                        <td>{data.ciclo.ciclo}</td>
+                        <td>{data.ciclo.dataUltimoCiclo}</td>
+                        <td>{data.ciclo.dataCicloAtual}</td>
+                      </tr>
+                    </tbody>
+                  </>)})}
 
-              
-              </table>    
-        </div>
-      </div>  
+                  </>)}
+
+                  
+                  </table>    
+            </div>
+    </>
   );
 }
 

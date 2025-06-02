@@ -1,11 +1,14 @@
-import '../../CSS/BodyStyle.css'
+import { Link } from 'react-router-dom';
+import '../../CSS/Planta.css';
 import EditarInfo from './EditarInfo';
 import React, { useState, useEffect } from 'react';
+import MenuCategoriaPlanta from '../../Components/Menu_Categoria_Planta';
+
 
 function GerenciarPlantaMaturacao(){
 
   const UrlGetList = `${process.env.REACT_APP_BACKEND_URL}/planta/ListarPlantasMaturacao`
-  //const UrlGetList = "http://localhost:8080/planta/ListarPlantasMaturacao"
+  //const UrlGetList = "http://localhost:8080/planta/ListarPlantasGerminacao"
   const [listAll, setListAll] = useState([]);
   const [pesquisaInput, setPesquisaInput] = useState('')
   const [showModal, setShowModal] = useState(false);
@@ -59,12 +62,19 @@ function GerenciarPlantaMaturacao(){
       });
     }
 
-
     return(<>
 
-      <div class="input-group mb-3">
-        <button class="btn btn-outline-secondary" type="button" id="button-addon1">Nome Popular</button>
-        <input type="text" class="form-control" name='pesquisaInput' onChange={handleChange} placeholder="Digite o nome para pesquisa" aria-label="Example text with button addon" aria-describedby="button-addon1"/>
+<div className='conteudoPlanta'>
+            <div className='boxButton'>
+                 <Link to="/nova_planta"><button type="button" class="btn btn-outline-success">NOVO CADASTRO</button></Link>
+            </div>
+            <div className='menuCategoriaCiclo'> <MenuCategoriaPlanta/></div>
+
+            <div className='boxConteudo'>
+            <h1>Gerência de Plantas</h1><br/>    
+            <div class="input-group mb-3">
+        <button class="btn btn-outline-secondary" type="button" id="button-addon1"></button>
+        <input type="text" class="form-control" name='pesquisaInput' onChange={handleChange} placeholder="Digite o nome popular para pesquisa" aria-label="Example text with button addon" aria-describedby="button-addon1"/>
         </div>  
       <table class="table">
         <thead>
@@ -89,7 +99,7 @@ function GerenciarPlantaMaturacao(){
                     <td>{data.ciclo.dataCicloAtual}</td>
                     <td>{data.localizacao ? (<>{data.localizacao.referencia}</>) : (<></>)}</td>
                     <td>{data.instrucoes}</td>
-                    <td><a onClick={() =>{handleOpenModal('Editar'); handleRowSelect(data);} } className='opcaoExtra'>Editar informações</a></td>
+                    <td><a onClick={() =>{handleOpenModal('Editar'); handleRowSelect(data);} } className='opcaoExtra'>Editar</a></td>
                   </tr>
                 </tbody>
                 </>)})}
@@ -105,7 +115,7 @@ function GerenciarPlantaMaturacao(){
                     <td>{data.ciclo.dataCicloAtual}</td>
                     <td>{data.localizacao ? (<>{data.localizacao.referencia}</>) : (<></>)}</td>
                     <td>{data.instrucoes}</td>
-                    <td><a onClick={() =>{handleOpenModal('Editar'); handleRowSelect(data);} } className='opcaoExtra'>Editar informações</a></td>
+                    <td><a onClick={() =>{handleOpenModal('Editar'); handleRowSelect(data);} } className='opcaoExtra'>Editar</a></td>
                   </tr>
                 </tbody>
                 </>)})}
@@ -132,6 +142,9 @@ function GerenciarPlantaMaturacao(){
                     </div>
                 </div>
                 )}
+                
+            </div>
+        </div>
                 
     </>)
 };

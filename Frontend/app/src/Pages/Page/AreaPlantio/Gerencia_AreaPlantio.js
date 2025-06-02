@@ -70,8 +70,8 @@ function Gerencia_AreaPlantio() {
   return (
     <>
       <div class="input-group mb-3">
-        <button class="btn btn-outline-secondary" type="button" id="button-addon1">Nome Popular</button>
-        <input type="text" class="form-control" name="pesquisaInput" onChange={handleChange} placeholder="Digite o nome para pesquisa" aria-label="Example text with button addon" aria-describedby="button-addon1"/>
+        <button class="btn btn-outline-secondary" type="button" id="button-addon1"></button>
+        <input type="text" class="form-control" name="pesquisaInput" onChange={handleChange} placeholder="Digite o nome da área para pesquisa" aria-label="Example text with button addon" aria-describedby="button-addon1"/>
       </div>
        <table class="table">
                       <thead>

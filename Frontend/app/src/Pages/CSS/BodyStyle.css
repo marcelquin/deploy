@@ -1,7 +1,17 @@
+.conteudoBox
+{
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 3%;
+    height: auto;
+}
+
 button
 {
     width: auto;
 }
+
+
 
 .boxForm
 {
@@ -19,10 +29,21 @@ button
 
 .BoxHome, .boxAdicionarGerenciar
 {
-    width: 95%;
+    width: 70%;
     height: auto;
     margin: 0 auto;
+    margin-top: 5%;
 }
+
+.BoxHome .BoxCategoriaCiclo
+{
+    width: 100%;
+    height: auto;
+    display: flex;
+    font-size: 16px;
+    border:1px solid rgb(4, 243, 104);
+}
+
 
 .boxAdicionarGerenciar .boxSubMenu
 {
@@ -55,40 +76,6 @@ button
     margin: 5%;
 }
 
-.boxSubMenu .menuArea
-{
-    width: 250px;
-    height: 200px;
-    cursor: pointer;
-    color: #27548A;
-    font-size: 20px;
-    text-align: center;
-    text-transform: uppercase;
-    text-align: start;
-}
-
-.boxSubMenu .menuPlanta
-{
-    width: 250px;
-    height: 200px;
-    cursor: pointer;
-    color: #27548A;
-    font-size: 20px;
-    text-align: start;
-    text-transform: uppercase;
-}
-
-.menuArea:hover
-{
-    background-image: url('../Imagens/gerenciaArea.png');
-    text-align: end;
-}
-
-.menuPlanta:hover
-{
-    background-image: url('../Imagens/gerenciaPlantas.png');
-    text-align: end;
-}
 
 .BoxHome .boxopcao
 {
@@ -99,10 +86,12 @@ button
     font-size: 16px;
 }
 
+
 .BoxHome .boxTable
 {
     width: 100%;
     height: auto;
+    border:1px solid red;
 }
 
 .boxAdicionarGerenciar

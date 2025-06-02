@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import Menu_Localizacao from '../../Components/Menu_Localizacao';
+import '../../CSS/Localizacao.css'
+
 
 function GerenciarLocalizacaoTodos(){
   
@@ -49,10 +52,16 @@ const handleChange = (e) => {
   }
 
     return(<>
+            
+          <div className='conteudoLocalizacao'>
 
-        <div class="input-group mb-3">
-            <button class="btn btn-outline-secondary" type="button" id="button-addon1">Área Plantio</button>
-            <input type="text" class="form-control" name='pesquisaInput' onChange={handleChange} placeholder="Digite a área a ser pesquisa" aria-label="Example text with button addon" aria-describedby="button-addon1"/>
+            <div className='boxButton'><Menu_Localizacao/></div>
+            <br/>
+            <div className='boxConteudo'>
+            <h1>Localizações</h1><br/>
+            <div class="input-group mb-3">
+            <button class="btn btn-outline-secondary" type="button" id="button-addon1"></button>
+            <input type="text" class="form-control" name='pesquisaInput' onChange={handleChange} placeholder="Digite O nome a ser pesquisa" aria-label="Example text with button addon" aria-describedby="button-addon1"/>
         </div> 
 
         <table class="table">
@@ -90,7 +99,9 @@ const handleChange = (e) => {
               </>)})}    
             </>)}  
               </table>
-    
+
+            </div>
+          </div>
     </>)
 };
 
