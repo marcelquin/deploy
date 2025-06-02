@@ -1,29 +1,28 @@
-# Etapa 1: build (caso você esteja usando Vue, React, Angular, etc.)
-# Comente esta etapa se você já tem a pasta `dist` ou `build` pronta.
+# Etapa 1: build da aplicação React
+FROM node:18-alpine AS build
 
-# FROM node:18-alpine AS build-stage
-# WORKDIR /app
-# COPY . .
-# RUN npm install && npm run build
+WORKDIR /app
 
-# Etapa 2: Nginx para servir os arquivos
+# Copia os arquivos do projeto
+COPY . .
 
+# Instala dependências e gera a build
+RUN npm install && npm run build
+
+# Etapa 2: Nginx para servir os arquivos da build
 FROM nginx:alpine
-# Remove a configuração padrão
-RUN rm -rf /etc/nginx/conf.d/default.conf
 
-# Copia sua configuração customizada do Nginx (opcional, veja abaixo)
+# Remove a config padrão do Nginx
+RUN rm /etc/nginx/conf.d/default.conf
+
+# Copia a configuração customizada para servir SPAs (React)
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
-# Copia os arquivos da build do frontend
-# Se estiver usando a build acima:
-# COPY --from=build-stage /app/dist /usr/share/nginx/html
+# Copia a build gerada da etapa anterior para o Nginx
+COPY --from=build /app/build /usr/share/nginx/html
 
-# Se você já tem a pasta `dist/` ou `build/` pronta:
-COPY dist/ /usr/share/nginx/html
-
-# Expõe a porta padrão do Nginx
+# Expor a porta 80
 EXPOSE 80
 
-# Comando padrão
+# Comando para iniciar o Nginx
 CMD ["nginx", "-g", "daemon off;"]
