@@ -1,0 +1,94 @@
+.clienteConteudo
+{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+.BlocoGeral
+{
+    width: 100%;
+    height: auto;
+}
+
+.clienteNav
+{
+    height: auto;
+    width: 25%;
+    border: 1px solid gold;
+}
+
+.clienteBoxGeral
+{
+    width: 70%;
+    height: auto;
+}
+
+.clienteBoxGeral .clienteSeletorCadastro
+{
+    width: 300px;
+    height: 50px;
+}
+
+input
+{
+    margin: 20px;
+}
+
+.clienteConteudo .clientecampoPesquisa
+{
+    width: 100%;
+    height: 80px;
+}
+
+.clientecampoPesquisa .inputPesquisa
+{
+    width: 160px;
+    height: 20px;
+}
+
+.clienteBox
+{
+    width: 100%;
+    height: auto;
+    margin: 5%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.clienteBox .clienteRetorno
+{
+
+    width: 250px;
+    height: 280px;
+    margin: 10px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.clienteRetorno .clienteDestaque
+{
+    display: flex;
+}
+
+.clienteRetorno .thumb
+{
+    border: 1px solid rgb(71, 14, 177);
+    width: 50px;
+    height: 50px;
+    margin: 10px; 
+}
+
+.clienteRetorno .info
+{
+
+    width: 150px;
+    height: 50px;
+    margin-top: 10px; 
+}
+
+.clienteRetorno .infoGeral
+{
+
+    height: 175px;
+    width: 240px;
+    margin-left: 5px;
+}

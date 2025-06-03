@@ -1,0 +1,122 @@
+.ndBackground
+{
+    width: 100%;
+    height: auto;
+}
+
+.ndBackground .ndBoxHeader
+{
+    width: 100%;
+    height: 200;
+    display: flex;
+}
+
+.ndBoxHeader .ndHeaderlogo
+{
+    width: 40%;
+    height: 150px;
+    background-color: grey;
+    background-repeat: no-repeat;
+}
+
+.ndBoxHeader .ndHeaderInfoContato
+{
+    width: 52%;
+    height: 150px;;
+}
+
+.ndBoxHeader .ndHeaderAdmBtn
+{
+    width: 7%;
+    height: 150px;
+    margin: 1%;
+    border: 1px solid rgb(11, 190, 182);
+}
+
+.ndBackground .ndBoxSection
+{
+    width: 100%;
+    height: auto;
+    display: flex;
+}
+
+.ndBoxSection .ndBoxNavAdm
+{
+    width: 13%;
+    height: auto;
+}
+.ndNavOptionAdm
+{
+    width: 90%;
+    height: 40px;
+    text-align: center;
+    margin: 5px;
+    background-color: #004766;
+    color: white;
+}
+.ndNavOption:hover
+{
+    background-color: #663000
+}
+
+.ndBoxSection .ndBoxSectionInAdm
+{
+    width: 87%;
+    height: auto;
+}
+
+.ndBoxSection .ndBoxSectionInFlexAdm
+{
+    width: 87%;
+    height: auto;
+    display: flex;
+}
+
+.ndBoxSectionIn .ndSectionInCampoFiltroCadastroAdm
+{
+    width: 100%;
+    height: 50px;
+}
+
+.ndBoxSectionIn .ndSectionInCampoPesquisaAdm
+{
+    width: 100%;
+    height: 50px;
+}
+
+.ndBoxSectionIn .ndSectionInRetornoInfoAdm
+{
+    width: 100%;
+    height: auto;
+}
+
+.ndBoxSectionIn .ndSectionInRetornoInfoFlexAdm
+{
+    width: 100%;
+    height: auto;
+    display: flex;
+    overflow: scroll;
+}
+
+.ndSectionInRetornoInfoFlexAdm .infoRetornoTabelaAdm
+{
+    width: 68%;
+    height: auto;
+    overflow: scroll;
+}
+
+
+
+.ndSectionInRetornoInfoFlexAdm .infoRetornoVisorAdm
+{
+    width: 32%;
+    height: auto;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    overflow: scroll;
+}
+
+
+@media only screen and (min-width: 320px) and (max-width: 768px)
+{   
+
+}

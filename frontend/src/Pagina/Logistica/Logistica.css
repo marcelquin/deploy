@@ -1,0 +1,44 @@
+.logisticaBlocoFormTabela
+{
+    width: 65%;
+    height: auto;
+}
+
+.logisticaBlocoFormTabela .logisticaBlocoForm
+{
+    width: 100%;
+    height: auto;
+}
+
+.logisticaBlocoFormTabela .logisticaBlocoTabela
+{
+    width: 100%;
+    height: auto;
+}
+
+.logisticaBlocoInformacao
+{
+    width: 30%;
+    height: auto;
+    margin-right: 2,5%;
+}
+
+@media only screen and (min-width: 300px) and (max-width: 900px)
+{
+
+
+}
+
+@media only screen and (min-width: 320px) and (max-width: 900px)
+{
+
+}
+
+@media only screen and (min-width: 900px) and (max-width: 1200px)
+{
+
+}
+@media only screen and (min-width: 300px) and (max-width: 900px)
+{
+
+}

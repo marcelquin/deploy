@@ -1,0 +1,59 @@
+.admLogisticaBlocoGeral
+{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.admLogisticaBlocoGeral .admLogisticaBloconav
+{
+    height: auto;
+    width: 13%;
+}
+
+.admLogisticaBlocoGeral .admLogisticaBlococonteudo
+{
+    width: 87%;
+    height: auto;
+}
+
+.admLogisticaBlococonteudo .campoPesquisa
+{
+    width: 100%;
+    height: 80px;
+}
+
+.campoPesquisa .inputPesquisa
+{
+    width: 160px;
+    height: 20px;
+}
+
+.admLogisticaBlococonteudo .admLogisticaRetornoInformacao
+{
+    width: 100%;
+    height: auto;
+    display: flex;
+}
+
+.admLogisticaRetornoInformacao .admLogisticaBlococonteudoTabela
+{
+    width: 60%;
+    height: 750px;
+}
+
+.admLogisticaBlococonteudoTabela a
+{
+    cursor: pointer;
+}
+
+
+.admLogisticaRetornoInformacao .admLogisticaBlococonteudoMaisInfo
+{
+    width: 35%;
+    height: auto;
+    margin-right: 2,5%;
+    text-align: justify;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
