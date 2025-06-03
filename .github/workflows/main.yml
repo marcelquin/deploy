@@ -23,8 +23,7 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v5.2.0
         with:   
-          context: ./Frontend/app
+          context: ./frontend
           push: true
           tags: |
-              ${{ secrets.DOCKERHUB_USER }}/mhqaplantio20-frontend:v4
-              ${{ secrets.DOCKERHUB_USER }}/mhqaplantio20-frontend:latest
+              ${{ secrets.DOCKERHUB_USER }}/frontend_teste:v1
