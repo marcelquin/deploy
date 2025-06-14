@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: backend
-        image: mquinteiro464/plantio20-backend:v1
+        image: mquinteiro464/plantio20-backend:ofckubernetes
         ports:
         - containerPort: 8080
         env:
