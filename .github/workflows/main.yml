@@ -26,4 +26,12 @@ jobs:
           context: ./frontend
           push: true
           tags: |
-              ${{ secrets.DOCKERHUB_USER }}/plantio20-frontend:v4
+              ${{ secrets.DOCKERHUB_USER }}/plantio20-frontend:ofcdocker
+
+      - name: Build and push
+        uses: docker/build-push-action@v5.2.0
+        with:   
+          context: ./Backend
+          push: true
+          tags: |
+              ${{ secrets.DOCKERHUB_USER }}/plantio20-backend:ofcdocker
