@@ -1,28 +1,25 @@
-# Etapa 1: build da aplicação React
-FROM node:18-alpine AS build
+# Etapa 1: Build do React
+FROM node:18 AS builder
 
 WORKDIR /app
-
-# Copia os arquivos do projeto
+COPY package*.json ./
+RUN npm install
 COPY . .
+RUN npm run build
 
-# Instala dependências e gera a build
-RUN npm install && npm run build
+# Etapa 2: Servir com Nginx
+FROM nginx:stable-alpine
 
-# Etapa 2: Nginx para servir os arquivos da build
-FROM nginx:alpine
+# Remove a página padrão do Nginx
+RUN rm -rf /usr/share/nginx/html/*
 
-# Remove a config padrão do Nginx
-RUN rm /etc/nginx/conf.d/default.conf
+# Copia o build do React para a pasta pública do Nginx
+COPY --from=builder /app/build /usr/share/nginx/html
 
-# Copia a configuração customizada para servir SPAs (React)
+# Copia a config customizada do Nginx (veja abaixo)
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
-# Copia a build gerada da etapa anterior para o Nginx
-COPY --from=build /app/build /usr/share/nginx/html
-
-# Expor a porta 80
+# Expõe a porta 80
 EXPOSE 80
 
-# Comando para iniciar o Nginx
 CMD ["nginx", "-g", "daemon off;"]

@@ -46,7 +46,6 @@ function Home() {
 return (
     <>
         <div className="conteudoBox">
-
             <h1>GERENCIAMENTO DE PLANTAS</h1> <br/>
             <div class="input-group mb-3">
               <button class="btn btn-outline-secondary" type="button" id="button-addon1"></button>
