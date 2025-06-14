@@ -7,7 +7,7 @@ services:
     ports:
       - "80:80"
     environment:
-      - REACT_APP_BACKEND_URL=http://localhost:8080
+      - REACT_APP_BACKEND_URL=http://192.168.0.24:8080
     restart: on-failure
     networks:
       - link
@@ -32,8 +32,8 @@ services:
     networks:
       - link  
     environment:
-      - SPRING_DATASOURCE_URL=jdbc:postgresql://database:5432/mhqa_plantio
-      #- SPRING_DATASOURCE_URL=jdbc:postgresql://192.168.0.24:5432/mhqa_plantio
+      #- SPRING_DATASOURCE_URL=jdbc:postgresql://database:5432/mhqa_plantio
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://192.168.0.24:5432/mhqa_plantio
       - SPRING_DATASOURCE_USERNAME=mhqa
       - SPRING_DATASOURCE_PASSWORD=hk28gr20p1
       - SPRING_JPA_HIBERNATE_DDL_AUTO=update
